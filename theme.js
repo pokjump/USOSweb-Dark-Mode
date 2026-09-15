@@ -1,6 +1,7 @@
 if (/(^|\.)usos(web)?(\.|$)/i.test(location.hostname)) window.__usosDarkThemeCss = String.raw`
 :root, :host {
   color-scheme: dark;
+  accent-color: #dda94f;
 
   --ud-canvas: #0b0d11;
   --ud-surface: #12151b;
@@ -176,6 +177,23 @@ input.wrbtn, input[type=submit].wrbtn {
 }
 hr { border-color: var(--ud-border-soft) !important; }
 
+/* USOSweb rysuje radio/checkbox przez input::after z mask-image (js/usos-ui/css/base.css);
+   kolor bierze z var(--primary) / currentColor - tu tylko przekolorowujemy "tusz". */
+input[type=radio]::after, input[type=checkbox]::after {
+  background-color: #9aa3b2 !important;
+}
+input[type=radio]:hover::after, input[type=checkbox]:hover::after {
+  background-color: #c3cad6 !important;
+}
+input[type=radio]:checked::after, input[type=checkbox]:checked::after,
+input[type=radio]:checked:hover::after, input[type=checkbox]:checked:hover::after,
+input[type=checkbox]:indeterminate::after {
+  background-color: var(--ud-gold) !important;
+}
+input[type=radio]:disabled::after, input[type=checkbox]:disabled::after {
+  background-color: #565d69 !important;
+}
+
 .ua-table > thead > tr > td,
 .ua-table > thead td.ua-sorted-by,
 .ua-table > thead td.ua-sortable:hover {
@@ -206,6 +224,32 @@ table.ua-form > tbody > tr.ua-header > td { background: var(--ud-surface-3) !imp
 .ui-state-hover, .ui-state-active, .ui-state-focus {
   background: #2a3140 !important;
   color: #e4e9f1 !important;
+}
+
+[style*="background:#fff" i], [style*="background: #fff" i],
+[style*="background-color:#fff" i], [style*="background-color: #fff" i],
+[style*="background:white" i], [style*="background: white" i],
+[style*="background-color:white" i], [style*="background-color: white" i] {
+  background-color: var(--ud-surface-2) !important;
+  color: var(--ud-text) !important;
+}
+[style*="background:#ee" i], [style*="background: #ee" i],
+[style*="background:#f0" i], [style*="background: #f0" i],
+[style*="background:#f5" i], [style*="background: #f5" i],
+[style*="background:#f8" i], [style*="background: #f8" i],
+[style*="background:#dd" i], [style*="background: #dd" i],
+[style*="background-color:#ee" i], [style*="background-color: #ee" i],
+[style*="background-color:#f0" i], [style*="background-color: #f0" i],
+[style*="background-color:#f5" i], [style*="background-color: #f5" i],
+[style*="background-color:#f8" i], [style*="background-color: #f8" i],
+[style*="background-color:#dd" i], [style*="background-color: #dd" i] {
+  background-color: var(--ud-surface-3) !important;
+  color: var(--ud-text) !important;
+}
+[style*="solid #aaa" i], [style*="solid #bbb" i], [style*="solid #ccc" i],
+[style*="solid #ddd" i], [style*="solid #eee" i], [style*="solid #999" i],
+[style*="solid #888" i], [style*="solid gray" i], [style*="solid grey" i] {
+  border-color: var(--ud-border) !important;
 }
 
 img.usos-dark-icon-invert { filter: invert(1) hue-rotate(180deg); }
