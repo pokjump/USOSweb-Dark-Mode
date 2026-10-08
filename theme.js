@@ -147,10 +147,36 @@ tr.even_row > td,
 .wrtext div.wrDropDownMenu, .wrtext div.wrDropDownMenu a,
 .wrtext .greenforms table.selektor_popup, .wrtext .redforms table.selektor_popup,
 .wrtext .greenforms table.selektor_popup tr td, .wrtext .redforms table.selektor_popup tr td,
-.uwb-panel, .uwb-panels-layout .uwb-white-content, .uwb-button.uwb-button-light {
+.uwb-panel, .uwb-button.uwb-button-light {
   background-color: var(--ud-surface-3);
   color: var(--ud-text);
 }
+
+/* Strona osoby: tło kolumn rysuje img/layout2/panels-bg.png (biała treść + szara kolumna boczna 318px). */
+.uwb-panels-layout { background: var(--ud-surface) !important; border-right-color: var(--ud-border) !important; }
+.uwb-panels-layout:has(#uwb-side-column) {
+  background: linear-gradient(to right,
+    var(--ud-surface) calc(100% - 319px), var(--ud-border) calc(100% - 319px),
+    var(--ud-border) calc(100% - 318px), var(--ud-surface-2) calc(100% - 318px)) !important;
+}
+.uwb-panels-layout .uwb-white-content { background-color: transparent !important; border-color: var(--ud-border) !important; color: var(--ud-text); }
+.uwb-panel { border-color: var(--ud-border) !important; }
+.uwb-panel.uwb-sidepanel > hr { background: var(--ud-border) !important; }
+.uwb-panel.uwb-sidepanel p.uwb-grey-centered { color: var(--ud-text-dim) !important; }
+.uwb-imgcover { background-color: var(--ud-surface-3) !important; }
+.uwb-imgcover-inner { box-shadow: inset 0 0 0 2000px rgba(11, 13, 17, 0.35); }
+.uwb-imgcover-photo-wrapper img { background-color: var(--ud-surface-3) !important; border-color: var(--ud-border) !important; }
+
+/* Wnioski: tabele osiągnięć z katalogu (parametr wyborzkatalogu). */
+table.parametr-wyborzkatalogu-tabela { background-color: var(--ud-surface-2) !important; border-color: var(--ud-border) !important; }
+table.parametr-wyborzkatalogu-tabela > * > tr { border-color: var(--ud-border) !important; }
+table.parametr-wyborzkatalogu-tabela > tbody > tr > td { background-color: var(--ud-surface) !important; }
+table.parametr-wyborzkatalogu-tabela div.element {
+  background-color: var(--ud-surface-3) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+
+:host(usos-copyright) p { color: var(--ud-text-dim) !important; }
 
 .note, .wrnote, .midnote, .dim, .grey { color: var(--ud-text-dim) !important; }
 .wrtext a.wrgrey, .wrtext a.wrgrey:visited, .wrtext a.wrgrey:active { color: #a3abb9 !important; }

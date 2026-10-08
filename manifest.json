@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "USOSweb Dark Mode",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Ciemny motyw dla USOSweb",
   "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
