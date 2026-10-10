@@ -1,5 +1,5 @@
 (function () {
-  if (!/(^|\.)usos(web)?(\.|$)/i.test(location.hostname)) return;
+  if (!/(^|\.)usos(web|cas)?(\.|$)/i.test(location.hostname)) return;
   if (window.__usosDarkInstalled) return;
   window.__usosDarkInstalled = true;
 

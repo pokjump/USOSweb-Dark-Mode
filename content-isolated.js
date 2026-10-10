@@ -1,5 +1,5 @@
 (function () {
-  if (!/(^|\.)usos(web)?(\.|$)/i.test(location.hostname)) return;
+  if (!/(^|\.)usos(web|cas)?(\.|$)/i.test(location.hostname)) return;
 
   function applyState(enabled) {
     window.dispatchEvent(new CustomEvent('usos-dark-toggle', { detail: { enabled } }));

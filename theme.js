@@ -1,4 +1,4 @@
-if (/(^|\.)usos(web)?(\.|$)/i.test(location.hostname)) window.__usosDarkThemeCss = String.raw`
+if (/(^|\.)usos(web|cas)?(\.|$)/i.test(location.hostname)) window.__usosDarkThemeCss = String.raw`
 :root, :host {
   color-scheme: dark;
   accent-color: #dda94f;
@@ -279,4 +279,36 @@ table.ua-form > tbody > tr.ua-header > td { background: var(--ud-surface-3) !imp
 }
 
 img.usos-dark-icon-invert { filter: invert(1) hue-rotate(180deg); }
+`;
+
+/* Logowanie CAS (usoscas.*): osobny arkusz cas/css/usos.css z jasnymi kolorami na sztywno. */
+if (/(^|\.)usos(web|cas)?(\.|$)/i.test(location.hostname) && location.pathname.startsWith('/cas/')) window.__usosDarkThemeCss += String.raw`
+:root {
+  --cas-theme-primary: #85acdf;
+  --cas-theme-primary-light: #a7c4ea;
+  --cas-theme-primary-bg: var(--ud-surface-2);
+  --cas-theme-secondary: #6f9fd6;
+  --mdc-theme-secondary: #6f9fd6;
+  --mdc-theme-text-primary-on-light: var(--ud-text);
+  --mdc-theme-surface: var(--ud-surface-2);
+  --mdc-theme-error: #dd8181;
+  --usos-theme-surface: var(--ud-surface-2);
+}
+body { color: var(--ud-text); }
+#header { background-color: var(--ud-surface) !important; border-bottom: 1px solid var(--ud-border); }
+#passwd-menu { background-color: #24507a; }
+#logout-menu { background-color: #8a2f2f; }
+#login-menu { background-color: #2c6b45; }
+.message { background-color: var(--ud-surface-3); color: var(--ud-text); }
+/* Logo ma nieprzezroczyste białe tło: po odwróceniu jest czarne, a lighten wtapia je w tło strony. */
+#logo { filter: invert(1) hue-rotate(180deg) brightness(1.05); mix-blend-mode: lighten; }
+.form { background-color: var(--ud-surface-2); border: 1px solid var(--ud-border-soft) !important; }
+.form-field:hover, .form-field:focus { border-color: #3d4757 !important; box-shadow: none; }
+input::placeholder { color: var(--ud-text-dim); opacity: 1; }
+.form-button, .form-button:hover, .form-button:focus { color: #f2f5fa; }
+.form-button { background-color: #24507a; background-image: linear-gradient(#2d6294, #24507a); }
+.form-button:hover, .form-button:focus { background-color: #2d6294; background-image: none; }
+strong { color: #dfe3ea; }
+.footer { background-color: var(--ud-surface); color: var(--ud-text-dim); }
+.footer a, .footer a:link, .footer a:visited, .footer a:active { color: #a3abb9; }
 `;

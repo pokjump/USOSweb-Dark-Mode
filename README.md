@@ -23,13 +23,14 @@ Działa w Chrome, Edge, Brave, Operze i innych przeglądarkach opartych na Chrom
 
 ### Obsługiwane strony
 
-Każda instalacja USOSweba - rozpoznawana po nazwie hosta zawierającej `usos` lub `usosweb`, na przykład:
+Każda instalacja USOSweba - rozpoznawana po nazwie hosta zawierającej `usos`, `usosweb` lub `usoscas`, na przykład:
 
 - `usosweb.ubb.edu.pl`
 - `web.usos.agh.edu.pl`
 - `www.usosweb.uj.edu.pl`
 - `web.usos.pwr.edu.pl`
 - `usosweb.polsl.pl`
+- `usoscas.ubb.edu.pl` (strona logowania CAS)
 
 ### Włączanie i wyłączanie
 
@@ -39,6 +40,7 @@ Kliknij ikonę rozszerzenia i przestaw przełącznik. Ustawienie zapisuje się n
 
 - Nowy interfejs USOSweb 7 (nagłówek, menu, ramki, plan zajęć, formularze) - przez podmianę zmiennych CSS, które dziedziczą się także wewnątrz Shadow DOM.
 - Starsze ekrany (`.wrtext`, `.usos-ui`, `.ua-*`, jQuery UI, dymki) - osobną warstwą reguł.
+- Strona logowania CAS (`usoscas.*/cas/...`) - formularz, nagłówek, sekcje pomocy i logo uczelni wtopione w ciemne tło.
 - Stare ikonki rysowane pod biały interfejs - skrypt bada jasność i nasycenie pikseli i odwraca tylko te ciemne i bezbarwne, zostawiając kolorowe w spokoju.
 
 ### Licencja
@@ -63,13 +65,14 @@ Works in Chrome, Edge, Brave, Opera and other Chromium-based browsers.
 
 ### Supported sites
 
-Any USOSweb deployment - matched by a hostname label of `usos` or `usosweb`, for example:
+Any USOSweb deployment - matched by a hostname label of `usos`, `usosweb` or `usoscas`, for example:
 
 - `usosweb.ubb.edu.pl`
 - `web.usos.agh.edu.pl`
 - `www.usosweb.uj.edu.pl`
 - `web.usos.pwr.edu.pl`
 - `usosweb.polsl.pl`
+- `usoscas.ubb.edu.pl` (CAS login page)
 
 ### Turning it on and off
 
@@ -79,6 +82,7 @@ Click the extension icon and flip the switch. The setting is stored and applies 
 
 - The modern USOSweb 7 interface (header, menus, frames, timetable, forms) - by overriding the CSS custom properties, which inherit across Shadow DOM boundaries.
 - Legacy screens (`.wrtext`, `.usos-ui`, `.ua-*`, jQuery UI, tooltips) - through a separate layer of rules.
+- The CAS login page (`usoscas.*/cas/...`) - form, header, help sections and the university logo blended into the dark background.
 - Old icons drawn for a white interface - a script measures each icon's luminance and saturation and inverts only the dark, near-greyscale ones, leaving colorful icons untouched.
 
 ### License
